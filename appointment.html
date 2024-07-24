@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Appointment</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <style>
+      body {
+        height: auto;
+        overflow-y: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="flex-containerA">
+      <div class="responseAppoint" id="responseAppoint"></div>
+    </div>
+    <div class="issues">
+      Have any questions? Call us at 123-456-7890 or email us at
+      contact@platinum.com
+    </div>
+  </body>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      let namelocal = localStorage.getItem("name");
+      let timelocal = localStorage.getItem("time");
+      let date = localStorage.getItem("date").split("-");
+      let response = document.querySelector("#responseAppoint");
+      response.textContent = `Thank you for scheduling an appointment with us, ${namelocal}! We look forward to seeing you at ${timelocal} on ${date[1]}/${date[2]}/${date[0]}!`;
+    });
+  </script>
+</html>
